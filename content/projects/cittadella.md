@@ -2,7 +2,7 @@
 title: Cittadella
 slug: cittadella
 date: 2026-06-25
-status: completed
+status: wip
 summary: Gioco da tavolo multiplayer in tempo reale (compravendita e aste, tema originale "Cittadella") con backend NestJS scalabile orizzontalmente.
 tags: [multiplayer, realtime, fullstack, web]
 stack: [Next.js, TypeScript, TailwindCSS, NestJS, Socket.io, PostgreSQL, Prisma, Redis, Supabase]
@@ -14,6 +14,10 @@ featured: true
 Cittadella è un gioco da tavolo multiplayer online ispirato al Monopoly:
 compravendita di proprietà, aste, scambi e gestione del debito, giocato in
 tempo reale tra più giocatori.
+
+Il core è completo e gira in produzione (multiplayer real-time, scalabilità
+orizzontale, auth); resta un progetto **vivo** — continuo ad aggiungere regole
+e feature, tracciate in `KNOWN_GAPS.md`.
 
 ## Architettura
 
