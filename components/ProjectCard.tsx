@@ -4,8 +4,8 @@ import { ArrowIcon } from "./icons";
 
 function StatusBadge({ status }: { status: Project["status"] }) {
   const map = {
-    wip: { label: "in corso", dot: "bg-amber-400" },
-    completed: { label: "completato", dot: "bg-accent" },
+    wip: { label: "in corso", dot: "bg-accent" },
+    completed: { label: "completato", dot: "bg-accent2" },
   } as const;
   const { label, dot } = map[status];
   return (

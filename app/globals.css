@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
-/* Design system — dark, cyan accent. Tailwind v4 tokens.
-   Colors here become utilities: bg-bg, text-fg, text-muted, text-accent, border-border, bg-surface. */
+/* Design system — warm dark, desaturated amber accent. Tailwind v4 tokens.
+   Atmosphere: Stray / TLOU / Hollow Knight / Elden Ring — warm desaturated
+   near-black base + muted amber/gold primary, spent-teal secondary for detail.
+   Colors here become utilities: bg-bg, text-fg, text-muted, text-accent,
+   text-accent2, border-border, bg-surface. */
 @theme {
-  --color-bg: #0a0a0b;
-  --color-surface: #121215;
-  --color-fg: #e7e9ea;
-  --color-muted: #8b9196;
-  --color-accent: #22d3ee;
-  --color-accent-hover: #67e8f9;
-  --color-border: #1f2124;
+  --color-bg: #171510;
+  --color-surface: #201d16;
+  --color-fg: #ece6da;
+  --color-muted: #a39a88;
+  --color-accent: #c9a227;
+  --color-accent-hover: #e3c05a;
+  --color-accent2: #5e8b84;
+  --color-border: #2c2820;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
