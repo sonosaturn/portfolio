@@ -9,8 +9,7 @@ export const site = {
   email: "gentilezzalorenzo1@gmail.com",
   socials: {
     github: "https://github.com/sonosaturn",
-    // TODO(lorenzo): confermare handle Instagram reale
-    instagram: "https://instagram.com/sonosaturn",
+    instagram: "https://instagram.com/sonosaturn.dev",
   },
 } as const;
 

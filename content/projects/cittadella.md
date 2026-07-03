@@ -3,10 +3,11 @@ title: Cittadella
 slug: cittadella
 date: 2026-06-25
 status: wip
-summary: Gioco da tavolo multiplayer in tempo reale (compravendita e aste, tema originale "Cittadella") con backend NestJS scalabile orizzontalmente.
+summary: Gioco da tavolo multiplayer in tempo reale (compravendita e aste, tema originale "Cittadella"), server-autoritativo e scalabile orizzontalmente. Core completo e in produzione.
 tags: [multiplayer, realtime, fullstack, web]
-stack: [Next.js, TypeScript, TailwindCSS, NestJS, Socket.io, PostgreSQL, Prisma, Redis, Supabase]
+stack: [Next.js, TypeScript, TailwindCSS, NestJS, Socket.io, PostgreSQL, Prisma, Redis, BullMQ, Supabase]
 links:
+  demo: https://monopoly-ruby.vercel.app
   github: https://github.com/sonosaturn/monopoly
 featured: true
 ---
@@ -15,9 +16,9 @@ Cittadella è un gioco da tavolo multiplayer online ispirato al Monopoly:
 compravendita di proprietà, aste, scambi e gestione del debito, giocato in
 tempo reale tra più giocatori.
 
-Il core è completo e gira in produzione (multiplayer real-time, scalabilità
-orizzontale, auth); resta un progetto **vivo** — continuo ad aggiungere regole
-e feature, tracciate in `KNOWN_GAPS.md`.
+Il **core è completo e gira in produzione** (frontend su Vercel, backend su
+Railway, DB e auth su Supabase); resta un progetto **vivo** — continuo ad
+aggiungere regole e feature, tracciate in `KNOWN_GAPS.md`.
 
 ## Architettura
 
@@ -27,16 +28,20 @@ Frontend **Next.js 14** (App Router) con Zustand per lo state, backend
 (via Prisma) e **Redis**; l'autenticazione è delegata a **Supabase Auth**, con
 i token verificati lato backend in ES256 via JWKS — nessun secret condiviso.
 
-## Real-time e scalabilità
+## Real-time e anti-cheat server-autoritativo
 
-Il cuore del progetto è il modello real-time: ogni azione è un `GameIntent`
-tipizzato che il server valida e applica, ri-emettendo lo stato aggiornato a
-tutti i client. La partita gira su **più istanze** dietro nginx grazie al
+Il cuore del progetto è il modello real-time: ogni azione del client è un
+`GameIntent` tipizzato che **il server valida e applica** prima di ri-emettere
+lo stato aggiornato a tutti. Il client non è mai fonte di verità — non può
+falsificare mosse, saldi o proprietà: l'engine di gioco è puro e vive solo
+lato server. La partita gira su **più istanze** dietro nginx grazie al
 `redis-adapter` di Socket.io per il broadcast cross-istanza, a un lock
-distribuito per `gameId` e ai timer su BullMQ, con recovery idempotente al boot.
+distribuito per `gameId` e ai timer su **BullMQ**, con recovery idempotente al
+boot che ricostruisce le partite in corso.
 
-## Sicurezza e osservabilità
+## Sicurezza, CI e osservabilità
 
 Rate limiting a due livelli (HTTP throttler + sliding window Redis sui
-WebSocket), CORS whitelist, helmet, e logging strutturato JSON. Osservabilità
-con pino, endpoint `/health` e `/metrics` (Prometheus), Sentry opzionale.
+WebSocket), CORS whitelist, helmet e logging strutturato JSON. **CI a 6 job**
+su ogni push; osservabilità con pino, endpoint `/health` e `/metrics`
+(Prometheus), Sentry opzionale e cancellazione account GDPR.

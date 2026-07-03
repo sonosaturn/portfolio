@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getAllProjects } from "@/lib/content";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectsExplorer from "@/components/ProjectsExplorer";
 
 export const metadata: Metadata = {
   title: "Progetti — Lorenzo",
@@ -20,11 +20,7 @@ export default function ProjectsPage() {
       {projects.length === 0 ? (
         <p className="text-muted">Ancora niente qui. A breve.</p>
       ) : (
-        <div className="flex flex-col gap-4">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
-        </div>
+        <ProjectsExplorer projects={projects} />
       )}
     </div>
   );

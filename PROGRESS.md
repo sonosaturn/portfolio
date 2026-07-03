@@ -6,7 +6,7 @@ Stato di avanzamento del portfolio, per fasi. Aggiornato a ogni fase conclusa.
 ## Fase 0 — Setup, design system, deploy ✅
 
 - Next.js 16 (App Router) + TypeScript + TailwindCSS v4.
-- Design system dark, accento cyan, come token in `app/globals.css` (`@theme`).
+- Design system dark, accento amber desaturato (era cyan), come token in `app/globals.css` (`@theme`).
 - Root layout con header/footer minimali; home placeholder.
 - Repo GitHub `sonosaturn/portfolio`, deploy Vercel con auto-deploy su push a `main`.
 - Live: https://portfolio-navy-eight-65.vercel.app
@@ -20,15 +20,23 @@ Stato di avanzamento del portfolio, per fasi. Aggiornato a ogni fase conclusa.
 - Contenuti di prova: `cittadella` (project), `palestra` (interest, segnaposto).
 - Verifica: `npm run check:content`. Schemi documentati in `CONTENT.md`.
 
-## Fase 2 — Layout / navigazione 🔜
+## Fase 2 — Layout / navigazione ✅
 
 Home vera, header/footer definitivi, routing verso le sezioni. Liste
-progetti/interessi in forma base. (Dettaglio ricco + rendering markdown + filtri = Fase 3.)
+progetti/interessi in forma base.
 
-## Fase 3 — Pagine dettaglio + filtri
+## Fase 3 — Sezione progetti (dettaglio + filtri + contenuti reali) ✅
 
-Rendering markdown completo dei progetti, pagine dettaglio, filtri per tag/status/categoria.
+- Lista `/projects`: griglia di card con filtri client per **status** e **tag**
+  (combinabili); conteggio con singolare/plurale corretto (`lib/format.ts`).
+- Card arricchite: tag, stack, badge status (wip=amber / completed=teal), link demo/code.
+- Dettaglio `/projects/[slug]`: rendering markdown completo (`react-markdown` + GFM +
+  `rehype-highlight`), syntax highlighting e `.prose` on-palette, cover se presente.
+- Contenuti reali: `cittadella`, `wasatext`, `jpokebattle`, `autobrain`, `dotfiles`
+  (featured: cittadella, wasatext, autobrain).
+- Fix Instagram reale in `lib/site.ts`.
 
-## Fase 4 — Contenuti reali
+## Fase 4 — Contenuti reali (interessi)
 
-Riscrittura `palestra.md` e aggiunta contenuti veri (progetti + interessi).
+Riscrittura `palestra.md` e aggiunta interessi veri. (Nota: il dettaglio interessi
+rende ancora lo stub "descrizione in arrivo" — passare a `Markdown` come i progetti.)

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllProjects, getAllInterests } from "@/lib/content";
 import { site } from "@/lib/site";
+import { pluralize } from "@/lib/format";
 import ProjectCard from "@/components/ProjectCard";
 import { ArrowIcon } from "@/components/icons";
 
@@ -10,8 +11,8 @@ export default function Home() {
   const interestCount = getAllInterests().length;
 
   const entrances = [
-    { href: "/projects", label: "Progetti", desc: "Cosa costruisco", count: projectCount, unit: "progetti" },
-    { href: "/interests", label: "Interessi", desc: "Fuori dallo schermo", count: interestCount, unit: "voci" },
+    { href: "/projects", label: "Progetti", desc: "Cosa costruisco", count: pluralize(projectCount, "progetto", "progetti") },
+    { href: "/interests", label: "Interessi", desc: "Fuori dallo schermo", count: pluralize(interestCount, "voce", "voci") },
   ];
 
   return (
@@ -52,9 +53,7 @@ export default function Home() {
             </div>
             <div className="flex items-baseline justify-between">
               <span className="text-sm text-muted">{e.desc}</span>
-              <span className="font-mono text-xs text-muted/70">
-                {e.count} {e.unit}
-              </span>
+              <span className="font-mono text-xs text-muted/70">{e.count}</span>
             </div>
           </Link>
         ))}
