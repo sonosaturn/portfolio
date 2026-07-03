@@ -53,7 +53,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       )}
 
       {project.stack.length > 0 && (
-        <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-muted/70">
+        <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-muted">
           {project.stack.slice(0, 5).map((tech) => (
             <li key={tech}>{tech}</li>
           ))}
@@ -79,7 +79,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${project.title} — GitHub`}
+              aria-label={`${project.title} — code (GitHub)`}
               className="inline-flex items-center gap-1.5 text-xs transition-colors hover:text-accent"
             >
               <GitHubIcon className="h-3.5 w-3.5" /> code

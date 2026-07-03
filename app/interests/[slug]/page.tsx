@@ -18,7 +18,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const interest = getInterestBySlug(slug);
   if (!interest) return {};
-  return { title: `${interest.title} — Lorenzo`, description: interest.summary };
+  const url = `/interests/${interest.slug}`;
+  return {
+    title: interest.title,
+    description: interest.summary,
+    alternates: { canonical: url },
+    openGraph: { title: interest.title, description: interest.summary, url, type: "article" },
+  };
 }
 
 export default async function InterestDetail({

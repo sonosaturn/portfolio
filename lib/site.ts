@@ -7,6 +7,9 @@ export const site = {
   tagline: "building AI memory systems & context engineering",
   location: "Sapienza, Roma",
   email: "gentilezzalorenzo1@gmail.com",
+  // Production URL — base for canonical/OG/sitemap. Update here if a custom
+  // domain is connected on Vercel.
+  url: "https://portfolio-navy-eight-65.vercel.app",
   socials: {
     github: "https://github.com/sonosaturn",
     instagram: "https://instagram.com/sonosaturn.dev",

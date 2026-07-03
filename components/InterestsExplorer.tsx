@@ -23,6 +23,8 @@ export default function InterestsExplorer({ interests }: { interests: Interest[]
 
   return (
     <div>
+      {/* Bridges the heading order between the page h1 and the card h3s. */}
+      <h2 className="sr-only">Elenco interessi</h2>
       {categories.length > 1 && (
         <div className="mb-8 flex flex-wrap items-center gap-2">
           <Chip active={category === null} onClick={() => setCategory(null)}>
@@ -36,7 +38,7 @@ export default function InterestsExplorer({ interests }: { interests: Interest[]
         </div>
       )}
 
-      <p className="mb-6 font-mono text-xs text-muted/70">
+      <p className="mb-6 font-mono text-xs text-muted">
         {pluralize(filtered.length, "voce", "voci")}
       </p>
 

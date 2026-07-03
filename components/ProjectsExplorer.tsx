@@ -33,6 +33,8 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
 
   return (
     <div>
+      {/* Bridges the heading order between the page h1 and the card h3s. */}
+      <h2 className="sr-only">Elenco progetti</h2>
       <div className="mb-8 flex flex-col gap-3">
         <div className="flex flex-wrap items-center gap-2">
           <Chip active={status === null} onClick={() => setStatus(null)}>
@@ -59,7 +61,7 @@ export default function ProjectsExplorer({ projects }: { projects: Project[] }) 
         )}
       </div>
 
-      <p className="mb-6 font-mono text-xs text-muted/70">
+      <p className="mb-6 font-mono text-xs text-muted">
         {pluralize(filtered.length, "progetto", "progetti")}
       </p>
 

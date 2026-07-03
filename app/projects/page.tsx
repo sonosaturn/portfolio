@@ -3,8 +3,10 @@ import { getAllProjects } from "@/lib/content";
 import ProjectsExplorer from "@/components/ProjectsExplorer";
 
 export const metadata: Metadata = {
-  title: "Progetti — Lorenzo",
-  description: "I progetti che costruisco.",
+  title: "Progetti",
+  description: "I progetti che costruisco — dal più recente.",
+  alternates: { canonical: "/projects" },
+  openGraph: { title: "Progetti", description: "I progetti che costruisco.", url: "/projects" },
 };
 
 export default function ProjectsPage() {

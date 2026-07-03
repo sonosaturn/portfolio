@@ -47,3 +47,19 @@ Specchio della Fase 3 per `/interests`, riusando i componenti:
   categoria + data + tag + cover se presente.
 - Sezione marcata **work in progress**: gli articoli veri arriveranno con la
   fase 2.0 (automazione contenuti). `palestra.md` resta segnaposto.
+
+## Fase 5 — Rifinitura finale ✅
+
+- **SEO/metadata**: `metadataBase`, title template, description e canonical per
+  pagina; Open Graph + Twitter card.
+- **Anteprime social**: immagini OG generate con `next/og` — root brandizzata +
+  una per progetto (titolo/summary/status). Favicon `app/icon.svg` (monogramma
+  amber), rimosso il favicon default.
+- **sitemap.xml** e **robots.txt** dinamici da contenuti.
+- **Lighthouse (desktop)**: 100/100/100/100 su home, /projects, dettaglio e
+  /interests (perf, a11y, best-practices, SEO).
+- **Accessibilità**: contrasto piccoli mono portato ≥4.5, `aria-label` allineati
+  al testo visibile, heading order sistemato (h2 sr-only negli explorer).
+- **README** riscritto: cos'è, stack, come si aggiunge un contenuto (doppia da
+  doc per il futuro sistema di agenti).
+- Dominio custom: vedi nota nel prossimo step (opzionale).

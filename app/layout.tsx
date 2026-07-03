@@ -8,9 +8,31 @@ import "./globals.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+const description = `${site.role}, ${site.tagline}. Progetti e interessi di ${site.name}, in chiaro.`;
+
 export const metadata: Metadata = {
-  title: `${site.name} — ${site.role}`,
-  description: `${site.role}, ${site.tagline}.`,
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} — ${site.role}`,
+    template: `%s — ${site.name}`,
+  },
+  description,
+  keywords: ["Lorenzo", "portfolio", "CS student", "AI", "context engineering", "Sapienza"],
+  authors: [{ name: site.name }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "it_IT",
+    url: site.url,
+    siteName: `${site.name} — ${site.role}`,
+    title: `${site.name} — ${site.role}`,
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.role}`,
+    description,
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -17,7 +17,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
-  return { title: `${project.title} — Lorenzo`, description: project.summary };
+  const url = `/projects/${project.slug}`;
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: { canonical: url },
+    openGraph: { title: project.title, description: project.summary, url, type: "article" },
+  };
 }
 
 const STATUS = {
@@ -76,7 +82,7 @@ export default async function ProjectDetail({
         )}
 
         {project.stack.length > 0 && (
-          <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-muted/70">
+          <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-muted">
             {project.stack.map((tech) => (
               <li key={tech} className="rounded border border-border px-2 py-0.5">
                 {tech}
