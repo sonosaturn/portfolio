@@ -36,7 +36,14 @@ progetti/interessi in forma base.
   (featured: cittadella, wasatext, autobrain).
 - Fix Instagram reale in `lib/site.ts`.
 
-## Fase 4 — Contenuti reali (interessi)
+## Fase 4 — Sezione interessi ✅
 
-Riscrittura `palestra.md` e aggiunta interessi veri. (Nota: il dettaglio interessi
-rende ancora lo stub "descrizione in arrivo" — passare a `Markdown` come i progetti.)
+Specchio della Fase 3 per `/interests`, riusando i componenti:
+- Lista `/interests`: griglia di card con filtro client per **categoria**
+  (`InterestsExplorer`); conteggio voce/voci corretto. `Chip` estratta e condivisa
+  con i progetti; label categoria centralizzate in `lib/labels.ts`.
+- Card interessi con tag (parità con le card progetti).
+- Dettaglio `/interests/[slug]`: rendering markdown completo (stesso `Markdown`),
+  categoria + data + tag + cover se presente.
+- Sezione marcata **work in progress**: gli articoli veri arriveranno con la
+  fase 2.0 (automazione contenuti). `palestra.md` resta segnaposto.

@@ -1,14 +1,7 @@
 import Link from "next/link";
 import type { Interest } from "@/lib/content";
+import { CATEGORY_LABEL } from "@/lib/labels";
 import { ArrowIcon } from "./icons";
-
-const CATEGORY_LABEL: Record<Interest["category"], string> = {
-  gym: "palestra",
-  gaming: "gaming",
-  music: "musica",
-  movies: "film",
-  other: "altro",
-};
 
 export default function InterestCard({ interest }: { interest: Interest }) {
   return (
@@ -27,7 +20,21 @@ export default function InterestCard({ interest }: { interest: Interest }) {
         </div>
         <ArrowIcon className="h-4 w-4 shrink-0 text-muted transition-all group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
       </div>
+
       <p className="mt-3 text-sm leading-relaxed text-muted">{interest.summary}</p>
+
+      {interest.tags.length > 0 && (
+        <ul className="mt-4 flex flex-wrap gap-1.5">
+          {interest.tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-border bg-bg/40 px-2 py-0.5 text-xs text-muted/90"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
     </Link>
   );
 }

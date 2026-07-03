@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getAllInterests } from "@/lib/content";
-import InterestCard from "@/components/InterestCard";
+import InterestsExplorer from "@/components/InterestsExplorer";
 
 export const metadata: Metadata = {
   title: "Interessi — Lorenzo",
@@ -15,16 +15,13 @@ export default function InterestsPage() {
       <header className="mb-10">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Interessi</h1>
         <p className="mt-3 max-w-xl text-muted">Fuori dallo schermo — palestra, gaming, musica e altro.</p>
+        <p className="mt-2 font-mono text-xs text-accent/80">work in progress — presto qui degli articoli.</p>
       </header>
 
       {interests.length === 0 ? (
         <p className="text-muted">Ancora niente qui. A breve.</p>
       ) : (
-        <div className="flex flex-col gap-4">
-          {interests.map((interest) => (
-            <InterestCard key={interest.slug} interest={interest} />
-          ))}
-        </div>
+        <InterestsExplorer interests={interests} />
       )}
     </div>
   );
