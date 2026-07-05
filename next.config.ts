@@ -6,9 +6,13 @@ import type { NextConfig } from "next";
 // use inline style attributes (e.g. the --i stagger var) — an SSG page can't
 // carry a per-request nonce without turning dynamic. img-src allows data: for
 // inline SVGs; add remote hosts here if project covers ever point off-site.
+// Dev only: React/Next need eval() in development (callstack reconstruction,
+// Turbopack HMR). Never emitted in production builds.
+const devEval = process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : "";
+
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src 'self' 'unsafe-inline'${devEval}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "font-src 'self'",
