@@ -53,7 +53,7 @@ export default function Home() {
             </div>
             <div className="flex items-baseline justify-between">
               <span className="text-sm text-muted">{e.desc}</span>
-              <span className="font-mono text-xs text-muted">{e.count}</span>
+              <span className="text-xs text-muted">{e.count}</span>
             </div>
           </Link>
         ))}

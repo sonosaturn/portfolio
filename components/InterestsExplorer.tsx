@@ -38,7 +38,7 @@ export default function InterestsExplorer({ interests }: { interests: Interest[]
         </div>
       )}
 
-      <p className="mb-6 font-mono text-xs text-muted">
+      <p className="mb-6 text-xs text-muted">
         {pluralize(filtered.length, "voce", "voci")}
       </p>
 

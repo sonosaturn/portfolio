@@ -15,7 +15,7 @@ export default function Chip({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`rounded-full border px-3 py-1 font-mono text-xs transition-colors ${
+      className={`rounded-full border px-3 py-1 text-xs transition-colors ${
         active
           ? "border-accent/60 bg-accent/10 text-accent"
           : "border-border text-muted hover:border-accent/40 hover:text-fg"

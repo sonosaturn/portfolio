@@ -51,12 +51,12 @@ export default async function ProjectDetail({
 
   return (
     <article>
-      <Link href="/projects" className="font-mono text-sm text-muted transition-colors hover:text-fg">
+      <Link href="/projects" className="text-sm text-muted transition-colors hover:text-fg">
         ← progetti
       </Link>
 
       <header className="mt-6">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-muted">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
           <span className="inline-flex items-center gap-1.5">
             <span className={`h-1.5 w-1.5 rounded-full ${status.dot}`} aria-hidden />
             {status.label}

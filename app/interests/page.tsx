@@ -17,7 +17,7 @@ export default function InterestsPage() {
       <header className="mb-10">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Interessi</h1>
         <p className="mt-3 max-w-xl text-muted">Fuori dallo schermo — palestra, gaming, musica e altro.</p>
-        <p className="mt-2 font-mono text-xs text-accent/80">work in progress — presto qui degli articoli.</p>
+        <p className="mt-2 text-xs text-accent/80">work in progress — presto qui degli articoli.</p>
       </header>
 
       {interests.length === 0 ? (

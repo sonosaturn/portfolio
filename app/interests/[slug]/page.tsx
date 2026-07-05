@@ -38,12 +38,12 @@ export default async function InterestDetail({
 
   return (
     <article>
-      <Link href="/interests" className="font-mono text-sm text-muted transition-colors hover:text-fg">
+      <Link href="/interests" className="text-sm text-muted transition-colors hover:text-fg">
         ← interessi
       </Link>
 
       <header className="mt-6">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-muted">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
           <span className="text-accent">{CATEGORY_LABEL[interest.category]}</span>
           <span aria-hidden>·</span>
           <time dateTime={interest.date.toISOString().slice(0, 10)}>{formatDate(interest.date)}</time>

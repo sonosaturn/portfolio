@@ -15,7 +15,7 @@ export default function InterestCard({ interest }: { interest: Interest }) {
           <h3 className="font-medium text-fg transition-colors group-hover:text-accent">
             {interest.title}
           </h3>
-          <span className="mt-1 block font-mono text-xs text-muted">
+          <span className="mt-1 block text-xs text-muted">
             {CATEGORY_LABEL[interest.category]}
           </span>
         </div>

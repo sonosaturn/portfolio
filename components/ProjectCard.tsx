@@ -10,7 +10,7 @@ function StatusBadge({ status }: { status: Project["status"] }) {
   } as const;
   const { label, dot } = map[status];
   return (
-    <span className="inline-flex items-center gap-1.5 font-mono text-xs text-muted">
+    <span className="inline-flex items-center gap-1.5 text-xs text-muted">
       <span className={`h-1.5 w-1.5 rounded-full ${dot}`} aria-hidden />
       {label}
     </span>
