@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Interest } from "@/lib/content";
+import { Badge } from "@/components/ui/badge";
 import { CATEGORY_LABEL } from "@/lib/labels";
 import { ArrowIcon } from "./icons";
 
@@ -26,11 +27,10 @@ export default function InterestCard({ interest }: { interest: Interest }) {
       {interest.tags.length > 0 && (
         <ul className="mt-4 flex flex-wrap gap-1.5">
           {interest.tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-full border border-border bg-bg/40 px-2 py-0.5 text-xs text-muted/90"
-            >
-              {tag}
+            <li key={tag}>
+              <Badge variant="outline" className="bg-bg/40 font-normal text-muted/90">
+                {tag}
+              </Badge>
             </li>
           ))}
         </ul>
