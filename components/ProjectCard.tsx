@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <StatusBadge status={project.status} />
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-muted">{project.summary}</p>
+      <p className="mt-3 max-w-[55ch] text-sm leading-relaxed text-muted">{project.summary}</p>
 
       {project.tags.length > 0 && (
         <ul className="mt-4 flex flex-wrap gap-1.5">
