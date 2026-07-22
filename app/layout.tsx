@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { site } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Background from "@/components/Background";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+// Single reversible flag: false removes the ambient background entirely.
+const SHOW_BACKGROUND = true;
+
+const plexSans = IBM_Plex_Sans({ weight: ["400", "500", "600", "700"], variable: "--font-plex-sans", subsets: ["latin"] });
+const plexMono = IBM_Plex_Mono({ weight: ["400", "500", "600"], variable: "--font-plex-mono", subsets: ["latin"] });
 
 const description = `${site.role}, ${site.tagline}. Progetti e interessi di ${site.name}, in chiaro.`;
 
@@ -37,8 +41,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="it" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
+    <html lang="it" className={`${plexSans.variable} ${plexMono.variable} h-full`}>
       <body className="min-h-full flex flex-col">
+        {SHOW_BACKGROUND && <Background />}
         <Header />
         <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-16">{children}</main>
         <Footer />

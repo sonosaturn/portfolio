@@ -19,8 +19,8 @@
   --color-accent2: #5e8b84;
   --color-border: #2c2820;
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 html {
@@ -36,6 +36,17 @@ body {
 
 ::selection {
   background: color-mix(in oklab, var(--color-accent) 30%, transparent);
+}
+
+/* Terminal register: page display headings in mono for console character.
+   Long-form article headings (.prose) stay sans for reading comfort. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-mono);
+}
+.prose :is(h1, h2, h3, h4) {
+  font-family: var(--font-sans);
 }
 
 /* Keyboard focus: visible accent ring, never removed. */
@@ -74,6 +85,7 @@ body {
   color: var(--color-fg);
   line-height: 1.75;
   font-size: 1rem;
+  max-width: 68ch;
 }
 .prose > * + * {
   margin-top: 1.15em;

@@ -46,7 +46,7 @@ export default function Home() {
             className="group flex flex-col justify-between gap-8 rounded-lg border border-border p-6 transition-colors hover:border-accent/50"
           >
             <div className="flex items-start justify-between">
-              <span className="text-xl font-medium text-fg transition-colors group-hover:text-accent">
+              <span className="font-mono text-xl font-medium text-fg transition-colors group-hover:text-accent">
                 {e.label}
               </span>
               <ArrowIcon className="h-5 w-5 text-muted transition-all group-hover:text-accent group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
