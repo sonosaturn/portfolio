@@ -1,9 +1,9 @@
 ---
-title: Dotfiles — Ricing Hyprland
+title: "Dotfiles: Ricing Hyprland"
 slug: dotfiles
 date: 2026-06-01
 status: wip
-summary: Ricing completo di EndeavourOS + Hyprland (Wayland), tema Tokyo Night — configurazione modulare e coerente su tutto lo stack, con installer idempotente. In arrivo una palette dinamica dal wallpaper.
+summary: "Ricing completo di EndeavourOS + Hyprland (Wayland), tema Tokyo Night: configurazione modulare e coerente su tutto lo stack, con installer idempotente. In arrivo una palette dinamica dal wallpaper."
 tags: [linux, wayland, hyprland, ricing]
 stack: [Hyprland, Waybar, Quickshell, QML, Bash, zsh]
 links:
@@ -25,7 +25,7 @@ clipboard, grim/slurp/swappy per gli screenshot, hyprpicker per i colori.
 ## Dashboard in Quickshell
 
 Un control center in **Quickshell (QML)**, richiamabile con `SUPER+D`: overlay
-non-modale e trascinabile con posizione persistente, a schede — mixer audio
+non-modale e trascinabile con posizione persistente, a schede: mixer audio
 Pipewire con selettore device, calendario e gestione sessione
 (blocca / esci / riavvia / spegni).
 

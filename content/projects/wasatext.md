@@ -3,7 +3,7 @@ title: WASAText
 slug: wasatext
 date: 2025-06-15
 status: completed
-summary: App di messaggistica istantanea (chat 1:1 e di gruppo, foto, reazioni) — backend Go dietro un'API REST specificata in OpenAPI, frontend Vue, tutto containerizzato. Progetto d'esame individuale.
+summary: "App di messaggistica istantanea (chat 1:1 e di gruppo, foto, reazioni): backend Go dietro un'API REST specificata in OpenAPI, frontend Vue, tutto containerizzato. Progetto d'esame individuale."
 tags: [web, backend, api, fullstack]
 stack: [Go, OpenAPI, Vue.js, JavaScript, SQLite, Docker]
 links:
@@ -19,7 +19,7 @@ invio di messaggi e foto, reazioni e inoltro.
 ## Contratto prima del codice
 
 L'API è progettata **a partire dalla specifica OpenAPI 3.0** (`doc/api.yaml`):
-il contratto REST — risorse `session`, `conversations`, `messages`, `users` —
+il contratto REST (risorse `session`, `conversations`, `messages`, `users`)
 è la fonte di verità, e backend e frontend vi si conformano. Un approccio
 design-first che tiene allineati client e server.
 

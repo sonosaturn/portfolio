@@ -3,7 +3,7 @@ title: AutoBrain
 slug: autobrain
 date: 2026-05-15
 status: wip
-summary: Ecosistema "second brain" autonomo e auto-riparante — RAG sui propri documenti + assistente vocale agentico (Jarvis) che scrive e corregge il proprio codice. Costruito sul free tier di Gemini.
+summary: 'Ecosistema "second brain" autonomo e auto-riparante: RAG sui propri documenti più un assistente vocale agentico (Jarvis) che scrive e corregge il proprio codice. Costruito sul free tier di Gemini.'
 tags: [ai, rag, agents, voice]
 stack: [Python, Gemini, ChromaDB, Vosk, Obsidian, Tkinter]
 links:
@@ -14,7 +14,7 @@ featured: true
 AutoBrain è un ecosistema **second brain** potenziato ad AI: mette insieme un
 sistema **RAG** per la gestione della conoscenza e **Jarvis**, un assistente
 vocale autonomo capace di migliorare sé stesso. Nato con una filosofia
-**"zero-budget"** — solo Gemini free tier e Vosk offline — per dimostrare che
+**"zero-budget"** (solo Gemini free tier e Vosk offline) per dimostrare che
 conta più l'architettura del costo dei token.
 
 ## Second Brain (RAG)
